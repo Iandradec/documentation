@@ -1,6 +1,6 @@
 ---
 title: Timeflow
-category: Hetzner
+category: Contact Syncing
 order: 1
 ---
 
