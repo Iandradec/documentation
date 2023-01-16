@@ -35,7 +35,7 @@ kubectl config set-context --current --namespace=$NAMESPACE
   * debian/ubuntu:
     `apt-get install gettext-base`
 
-## How to create a simple PostgresSQL deployment
+### How to create a simple PostgresSQL deployment
 This chart bootstraps a PostgreSQL deployment using the Helm package manager.
 
 ### Create and select namespace
