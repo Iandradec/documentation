@@ -62,8 +62,9 @@ The following command example creates a file with credentials for postgresql in 
 
 * Encrypt secrets.yaml file   
 The following command will encrypt the previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-
-``` sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml```
+``` 
+sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml
+```
 
 * Upgrade or install release
 Refer to values.yaml for the database values:
@@ -73,11 +74,14 @@ RELEASE_NAME: <YOUR_RELEASE_NAME>
 CHART_NAME: <YOUR_CHART_NAME>
 ---
 ```
-
-```helm secrets upgrade --install $RELEASE_NAME $CHART_NAME -f raw.values.yaml -f secrets.yaml ```
+```
+helm secrets upgrade --install $RELEASE_NAME $CHART_NAME -f raw.values.yaml -f secrets.yaml
+ ```
   
 * Access to postgresql
-  ```kubectl exec -it < POSTGRESQL-POD-NAME > -- bash ```
+```
+kubectl exec -it < POSTGRESQL-POD-NAME > -- bash 
+```
   
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
