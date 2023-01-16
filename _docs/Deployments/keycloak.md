@@ -46,10 +46,14 @@ helm repo add codecentric https://codecentric.github.io/helm-charts
 * Encrypt secrets.yaml file   
   The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 
-``` sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml ```
+``` 
+sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
+```
 
 * Upgrade or install release
-``` helm secrets upgrade --install keycloak codecentric/keycloak -f values-hetzner.yaml -f secrets-hetzner.yaml --version 18.3.0```
+``` 
+helm secrets upgrade --install keycloak codecentric/keycloak -f values-hetzner.yaml -f secrets-hetzner.yaml --version 18.3.0
+```
 
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
@@ -59,7 +63,7 @@ helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
 
-### Values
+#### Values
 The following table lists the configurable parameters of the Keycloak chart and their default values.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
