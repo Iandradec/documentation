@@ -39,7 +39,7 @@ exclude:
 
 collections:
   docs:
-    title: Documentation
+    title: 
     permalink: /:path/
     output: true
 
