@@ -42,7 +42,7 @@
 				<ul>
 					<li class="nav-item top-level {% if page.url == '/' %}current{% endif %}">
 						{% assign home = site.html_pages | where: 'url', '/' | first %}
-						<!-- <a href="{{ site.baseurl }}/">{{ home.title }}</a> -->
+						<a>{{ home.title }}</a>
 					</li>
 				</ul>
 
