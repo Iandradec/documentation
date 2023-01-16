@@ -4,7 +4,8 @@ category: Deployments
 order: 3
 ---
 
-## How to create a ingress controller deployment
+<!-- ## How to create a ingress controller deployment -->
+###
 This chart bootstraps an <a href="https://kubernetes.github.io/ingress-nginx/" target="_blank"> Ingress Controller </a>  using the Helm package manager. 
 
 * Create and select namespace
@@ -14,10 +15,16 @@ kubectl config set-context --current --namespace ingress-nginx
 ```
 
 * Add Helm repo
-```helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx ```
+```
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx 
+```
 
 * Upgrade or install release
-``` helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx -f ingress/values.yaml  ```
+``` 
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx -f ingress/values.yaml  
+```
 
 * Uninstallation
-``` helm uninstall ingress-nginx  ```
+```
+helm uninstall ingress-nginx  
+```

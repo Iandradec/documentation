@@ -5,6 +5,7 @@ order: 1
 ---
 
 <!-- ## How to create a cert manager deployment -->
+###
 This chart bootstraps a <a href="https://artifacthub.io/packages/helm/cert-manager/cert-manager" target="_blank"> cert-manager addon </a> using the Helm package manager. 
 
 * Create and select namespace
