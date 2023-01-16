@@ -1,18 +1,18 @@
 # ----
 # Site
 
-title: Edition Template
+title: Dyvenia infrastructue
 url: "https://long-pig.cloudvent.net"
 baseurl:
 google_analytics_key:
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
+logo: /logo.svg
 description: Product documentation template for Jekyll.
 author:
-  name:
-  email:
+  name: Ivan Andrade C.
+  email: iandrade@dyvenia.com
   twitter: # twitter username without the @ symbol
 social:
   name: Edition Template
