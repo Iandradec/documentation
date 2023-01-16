@@ -61,8 +61,8 @@ defaults:
         order: Used to sort links in the navigation
       _options:
         content:
-          width: 1000
-          height: 1500
+          width: 800
+          height: 1000
   -
     scope:
       path: ""
