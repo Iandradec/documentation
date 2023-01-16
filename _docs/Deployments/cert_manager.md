@@ -1,6 +1,6 @@
 ---
 title: Cert Manager 
-category: deployments
+category: Deployments
 order: 1
 ---
 

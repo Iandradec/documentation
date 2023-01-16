@@ -1,5 +1,5 @@
 ---
 title: Zulip
-category: deployments
+category: Deployments
 order: 8
 ---

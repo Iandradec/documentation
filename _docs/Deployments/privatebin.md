@@ -1,6 +1,6 @@
 ---
 title: Privatebin
-category: deployments
+category: Deployments
 order: 6
 ---
 # How to create a Keycloak deployment

@@ -1,6 +1,6 @@
 ---
 title: Hive datastore
-category: deployments_archive
+category: Deployments_archive
 order: 2
 ---
 # How to create a Keycloak deployment

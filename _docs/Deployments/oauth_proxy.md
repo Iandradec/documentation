@@ -1,5 +1,5 @@
 ---
 title: Oauth2 proxy
-category: deployments
+category: Deployments
 order: 5
 ---

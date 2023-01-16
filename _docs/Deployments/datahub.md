@@ -1,6 +1,6 @@
 ---
 title: Datahub
-category: deployments
+category: Deployments
 order: 2
 ---
 

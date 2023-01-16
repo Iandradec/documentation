@@ -1,6 +1,6 @@
 ---
 title: Keycloak
-category: deployments
+category: Deployments
 order: 4
 ---
 # How to create a Keycloak deployment
