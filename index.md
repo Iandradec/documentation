@@ -85,11 +85,11 @@ kubectl exec -it < POSTGRESQL-POD-NAME > -- bash
   
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
-
 ``` 
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
+
 ### Deployments on Hetzner cloud
 This section shows more in detail on how to deploy each app on dyvenia infrastructure.
 * <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/datahub" target="_blank"> Datahub deployment</a>

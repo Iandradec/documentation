@@ -47,7 +47,7 @@ The following command example creates a file with secrets variables in plain tex
   EOF
   ```
 * Encrypt secrets.yaml file   
-  The following commands will manage the encryption of previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+The following commands will manage the encryption of previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 ``` 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml 
 ```
