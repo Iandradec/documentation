@@ -68,7 +68,7 @@ sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml
 
 * Upgrade or install release
 Refer to values.yaml for the database values:
-```yaml
+```bash
 ---
 RELEASE_NAME: <YOUR_RELEASE_NAME>
 CHART_NAME: <YOUR_CHART_NAME>
