@@ -6,10 +6,8 @@ order: 4
 ### How to create a Keycloak deployment
 This chart bootstraps a <a href="https://www.keycloak.org/" target="_blank"> Keycloak </a>  StatefulSet on a Kubernetes cluster using the <a href="https://helm.sh/" target="_blank"> Helm </a> package manager. StatefulSet uses ingress manifest to get access from external request.
 
-  * Official public helm public repo:
-<a href="https://github.com/codecentric/helm-charts" target="_blank"> https://github.com/codecentric/helm-charts </a>
-
-  * Dns:  <a href="https://keycloak-dev.dyvenia.com/" target="_blank"> https://sso.dyvenia.com
+    * Official public helm public repo: <a href="https://github.com/codecentric/helm-charts" target="_blank"> https://github.com/codecentric/helm-charts </a>
+    * Dns:  <a href="https://keycloak-dev.dyvenia.com/" target="_blank"> https://sso.dyvenia.com
 
 * Create and select namespace
 ``` 
