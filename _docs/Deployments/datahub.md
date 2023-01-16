@@ -34,7 +34,6 @@ MYSQL_ROOT_PASSWORD: <YOUR_MYSQL_PASSWORD>
 NEO4J_ROOT_PASSWORD: <YOUR_NEO4J_PASSWORD>
 ---
 ```
-
 ``` 
 kubectl create secret generic mysql-secrets --from-literal=mysql-root-password=$MYSQL_ROOT_PASSWORD
 kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J_ROOT_PASSWORD
@@ -42,7 +41,6 @@ kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J
 
 * Create decrypted secrets.yaml file
 The following command example creates a new file with datahub frontend credentials in plain text.
-
 ```
   cat <<EOF > frontend-creds-dec.yaml
   datahub-frontend:
@@ -59,7 +57,6 @@ The following command example creates a new file with datahub frontend credentia
 
 * Encrypt secrets.yaml file   
 The following command will encrypt the previous frontend-creds-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-
 ``` 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' frontend-creds-dec.yaml > frontend-creds.yaml 
 ```
