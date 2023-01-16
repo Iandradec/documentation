@@ -6,24 +6,24 @@ order: 4
 ### How to create a Keycloak deployment
 This chart bootstraps a <a href="https://www.keycloak.org/" target="_blank"> Keycloak </a>  StatefulSet on a Kubernetes cluster using the <a href="https://helm.sh/" target="_blank"> Helm </a> package manager. StatefulSet uses ingress manifest to get access from external request.
 
-    * Official public helm public repo: <a href="https://github.com/codecentric/helm-charts" target="_blank"> https://github.com/codecentric/helm-charts </a>
-    * Dns:  <a href="https://keycloak-dev.dyvenia.com/" target="_blank"> https://sso.dyvenia.com
+  * Official public helm public repo: <a href="https://github.com/codecentric/helm-charts" target="_blank"> https://github.com/codecentric/helm-charts </a>
+  * Dns:  <a href="https://keycloak-dev.dyvenia.com/" target="_blank"> https://sso.dyvenia.com
 
 * Create and select namespace
-``` 
+```bash 
 kubectl create ns keycloak  
 kubectl config set-context --current --namespace=keycloak
 ```
 
 * Add Helm repo
-``` 
+``` bash
 helm repo add codecentric https://codecentric.github.io/helm-charts 
 ```
 
 * Create decrypted secrets.yaml file
   The following command example creates a new file with keycloak and postgreSQL credentials in plain text.
 
-```
+```bash
   cat <<EOF > secrets-hetzner-dec.yaml
   extraEnv: |
     - name: KEYCLOAK_LOGLEVEL
@@ -42,21 +42,21 @@ helm repo add codecentric https://codecentric.github.io/helm-charts
 ```
 
 * Encrypt secrets.yaml file   
-  The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 
-``` 
+```bash 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
 ```
 
 * Upgrade or install release
-``` 
+```bash
 helm secrets upgrade --install keycloak codecentric/keycloak -f values-hetzner.yaml -f secrets-hetzner.yaml --version 18.3.0
 ```
 
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
 
-``` 
+```bash 
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```

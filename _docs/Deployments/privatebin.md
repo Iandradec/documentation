@@ -65,7 +65,7 @@ See values.yaml for full documentation
 | `podAnnotations`             | Additional annotations to add to the pods          | `{}`                                             |
 | `additionalLabels`           | Additional labels to add to resources              | `{}`                                             |
 
-## Upgrades
+#### Upgrades
 
 Standard helm upgrade process applies.
 

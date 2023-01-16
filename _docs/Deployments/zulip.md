@@ -8,25 +8,25 @@ order: 8
 This chart bootstraps a <a href="https://github.com/zulip/docker-zulip/tree/main/kubernetes/chart/zulip" target="_blank"> Zulip server </a> deployment on a Kubernetes cluster using the Helm package manager, based on https://github.com/zulip/docker-zulip
 
 * Create and select namespace
-``` 
+```bash
 kubectl create ns zulip
 kubectl config set-context --current --namespace=zulip
 ```
 
 * Clone official repository 
-```
+```bash
 git clone https://github.com/zulip/docker-zulip.git
 ```
 
 * Build Helm dependencies
-```
+```bash
 cd kubernetes/chart/zulip/                   # Change to template directory
 helm dependency update                       # Get helm dependency charts
 ```
 
 * Create decrypted secrets.yaml file
 The following command example creates a new file with zulip and it's dependencies credentials in plain text.
-```
+```bash
     cat <<EOF > secrets-hetzner-dec.yaml
     zulip:
         password: <your_zulip_secret_password>
@@ -55,18 +55,18 @@ The following command example creates a new file with zulip and it's dependencie
 
 * Encrypt secrets.yaml file   
 > The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-``` 
+```bash
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
 ```
 
 * Upgrade or install release 
-```
+```bash
 helm secrets upgrade --install zulip . -f values-hetzner.yaml -f secrets-hetzner.yaml 
 ```
 > This will show a message on how to reach your Zulip installation and how to create your first realm, wait for all your pods to be ready before you continue.
 > Run the commands to create a Realm, and you can reach Zulip following the instructions as well.
 
-```
+```bash
 export POD_NAME=$(kubectl get pods --namespace chat-prod -l "app.kubernetes.io/name=zulip" -o jsonpath="{.items[0].metadata.name}")                         
 kubectl -n chat-prod exec -it "$POD_NAME" -c zulip -- sudo -u zulip /home/zulip/deployments/current/manage.py generate_realm_creation_link
 ```

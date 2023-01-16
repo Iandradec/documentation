@@ -20,17 +20,17 @@ Timeflow is a web application build with 3 main components:
 
 
 * Create and select namespace
-``` 
+```bash
 kubectl create ns timeflow  
 kubectl config set-context --current --namespace=timeflow
 ```
 * Create a new Helm chart
-```
+```bash
 helm create timeflow
 ```
 * Create decrypted secrets.yaml file
 The following command example creates a file with secrets variables in plain text.
-```
+```bash
   cat <<EOF > secrets-dec.yaml
   db:
       extraEnvs:
@@ -48,23 +48,23 @@ The following command example creates a file with secrets variables in plain tex
 ```
 * Encrypt secrets.yaml file   
 The following commands will manage the encryption of previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-``` 
+```bash 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml 
 ```
 
 * Install release
-```
+```bash
 helm secrets install timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml
 ```
 
 * Upgrade release 
-```
+```bash
 helm secrets upgrade timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml 
 ```
  
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
-``` 
+```bash
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```

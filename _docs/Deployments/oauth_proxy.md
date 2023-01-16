@@ -10,33 +10,33 @@ This chart bootstraps a <a href="https://github.com/oauth2-proxy/manifests/tree/
 <a href="https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy" target="_blank"> oauth2-proxy </a> is a reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others) to validate accounts by email, domain or group.
 
 * Create and select namespace
-``` 
+```bash
 kubectl create ns proxy  
 kubectl config set-context --current --namespace=proxy
 ```
 
 * Add Helm repo
-``` 
+```bash 
 helm repo add oauth2-proxy https://oauth2-proxy.github.io/manifests 
 ```
 
 * Upgrade or install release
 Refer to values.yaml for the deployment values:
-```yaml
+```bash
 ---
 RELEASE_NAME: <your_release_name>
 CHART_NAME: <your_chart_name>
 ---
 ```
 
-```
+```bash
 helm install $RELEASE_NAME $CHART_NAME -f ./values-dev.yaml
- ```
+```
 
 * Uninstallation
 For a complete uninstallation, make sure to delete pvc created.
 
-``` 
+``` bash
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
