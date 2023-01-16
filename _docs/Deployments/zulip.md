@@ -73,8 +73,8 @@ kubectl -n chat-prod exec -it "$POD_NAME" -c zulip -- sudo -u zulip /home/zulip/
 
 #### Values
 
-| Key       | Type      | Default       | Description        |
-|-----|------|---------|-------------|
+| Key       | Type      | Default       | Description       |
+|-----------|-----------|---------------|-------------------|
 | affinity | object | `{}` | Affinity for pod assignment. Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity |
 | fullnameOverride | string | `""` | Fully override common.names.fullname template. |
 | image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Zulip docker image. Ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images |
