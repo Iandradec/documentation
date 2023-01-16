@@ -1,5 +1,5 @@
 ---
 title: Datahub
-category: hetzner
+category: infrastructure
 order: 2
 ---

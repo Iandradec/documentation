@@ -1,5 +1,5 @@
 ---
 title: Oauth2 proxy
-category: hetzner
+category: infrastructure
 order: 5
 ---

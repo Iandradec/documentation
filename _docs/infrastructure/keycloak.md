@@ -1,7 +1,7 @@
 ---
-title: Privatebin
-category: hetzner
-order: 6
+title: Keycloak
+category: infrastructure
+order: 4
 ---
 # How to create a Keycloak deployment
 

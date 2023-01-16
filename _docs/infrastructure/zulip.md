@@ -1,5 +1,5 @@
 ---
 title: Zulip
-category: hetzner
+category: infrastructure
 order: 8
 ---

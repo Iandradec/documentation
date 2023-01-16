@@ -1,6 +1,6 @@
 ---
 title: Timeflow
-category: hetzner
+category: infrastructure
 order: 7
 ---
 

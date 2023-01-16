@@ -1,5 +1,5 @@
 ---
 title: Cert Manager 
-category: hetzner
+category: infrastructure
 order: 1
 ---

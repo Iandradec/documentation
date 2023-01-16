@@ -1,7 +1,7 @@
 ---
 title: Keycloak
-category: hetzner
-order: 4
+category: infrastructure
+order: 10
 ---
 # How to create a Keycloak deployment
 

@@ -1,5 +1,5 @@
 ---
 title: Ingress
-category: hetzner
+category: infrastructure
 order: 3
 ---
