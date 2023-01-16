@@ -92,6 +92,7 @@ kubectl delete pvc $RELEASE_NAME-pvc
 
 ### Deployments on Hetzner cloud
 This section shows more in detail on how to deploy each app on dyvenia infrastructure.
+
 * <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/datahub" target="_blank"> Datahub deployment</a>
 * <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/cert-manager" target="_blank"> Cert-manager deployment </a>
 * <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/ingress" target="_blank"> Ingress Controller deployment </a>
