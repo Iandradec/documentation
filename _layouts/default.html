@@ -51,7 +51,7 @@
 					{% for group in grouped %}
 						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
 							{% assign items = group.items | sort: 'order' %}
-							<h4>{{ group.name }}</h4>
+							<p>{{ group.name }}</p>
 							<ul>
 								{% for item in items %}
 									<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
