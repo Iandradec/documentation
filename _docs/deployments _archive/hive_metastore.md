@@ -1,7 +1,7 @@
 ---
-title: Keycloak
-category: infrastructure
-order: 4
+title: Hive datastore
+category: deployments_archive
+order: 2
 ---
 # How to create a Keycloak deployment
 
