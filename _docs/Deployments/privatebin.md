@@ -27,7 +27,7 @@ helm install \
   --values your-values.yaml \
   privatebin/privatebin
 ```
-
+---
 #### Values
 
 See values.yaml for full documentation

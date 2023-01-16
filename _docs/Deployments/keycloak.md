@@ -60,7 +60,7 @@ For a complete uninstall, make sure to delete pvc created.
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
-
+---
 #### Values
 The following table lists the configurable parameters of the Keycloak chart and their default values.
 
