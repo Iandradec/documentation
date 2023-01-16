@@ -4,21 +4,21 @@ category: Deployments
 order: 7
 ---
 
-## Components
+### Components
 Timeflow is a web application build with 3 main components:
 
 * Local DB (PostgreSQL)
 * Backend (FastAPI)
 * Frontend (SvelteKit web framework)
 
-## Prerequisites setup
+### Prerequisites setup
 * <a href="https://iandradec.github.io/documentation/index.html" target="_blank"> Install kubectl </a> 
 * <a href="https://iandradec.github.io/documentation/index.html" target="_blank"> Helm 3.0.0+ </a> 
 * <a href="https://svelte.dev/" target="_blank"> SvelteKit web framework </a>
 * <a href="https://fastapi.tiangolo.com/" target="_blank"> FastAPI </a>
 * <a href="https://github.com/mozilla/sops" target="_blank"> Mozilla SOPS </a>
 
-## How to create a Timeflow deployment
+### How to create a Timeflow deployment
 * Create and select namespace
 ``` 
 kubectl create ns timeflow  
