@@ -19,18 +19,17 @@ Timeflow is a web application build with 3 main components:
 * <a href="https://github.com/mozilla/sops" target="_blank"> Mozilla SOPS </a>
 
 ## How to create a Timeflow deployment
-### Create and select namespace
+* Create and select namespace
 ``` 
 kubectl create ns timeflow  
 kubectl config set-context --current --namespace=timeflow
 ```
-### Create a new Helm chart
+* Create a new Helm chart
 ```
 helm create timeflow
 ```
-### Create decrypted secrets.yaml file
+* Create decrypted secrets.yaml file
 The following command example creates a file with secrets variables in plain text.
-
   ```
   cat <<EOF > secrets-dec.yaml
   db:
@@ -47,20 +46,24 @@ The following command example creates a file with secrets variables in plain tex
                 value: <backend_secret_key_example>
   EOF
   ```
-### Encrypt secrets.yaml file   
+* Encrypt secrets.yaml file   
   The following commands will manage the encryption of previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+``` 
+sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml 
+```
 
-  ``` sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-dec.yaml > secrets.yaml ```
+* Install release
+```
+helm secrets install timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml
+```
 
-### Install release
-  ```helm secrets install timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml ```
-
-### Upgrade release 
-  ```helm secrets upgrade timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml ```
+* Upgrade release 
+```
+helm secrets upgrade timeflow . -f values-hetzner.yaml -f secrets-hetzner.yaml 
+```
  
-### Uninstall release
+* Uninstall release
 For a complete uninstall, make sure to delete pvc created.
-
 ``` 
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
