@@ -46,10 +46,10 @@
 					</li>
 				</ul>
 
-				<ul class="dropdown-menu">
+				<ul>
 					{% assign grouped = site.docs | group_by: 'category' %}
 					{% for group in grouped %}
-						<li class="dropdownActive nav-item top-level {% if group.name == page.category %}current{% endif %}">
+						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
 							{% assign items = group.items | sort: 'order' %}
 							<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
 							<ul>
