@@ -5,7 +5,7 @@ order: 3
 ---
 
 <!-- ## How to create a ingress controller deployment -->
-###
+### How to create a ingress controller deployment
 This chart bootstraps an <a href="https://kubernetes.github.io/ingress-nginx/" target="_blank"> Ingress Controller </a>  using the Helm package manager. 
 
 * Create and select namespace

@@ -5,10 +5,10 @@ order: 2
 ---
 
 <!-- ### How to create a datahub deployment -->
-###
+### How to create a datahub deployment
 This chart bootstraps <a href="https://github.com/acryldata/datahub-helm" target="_blank"> Datahub </a> and it's dependencies (Elasticsearch, optionally Neo4j, MySQL, and Kafka) on a Kubernetes cluster using the Helm package manager. 
 
-### Components
+#### Components
 Datahub consists of 4 main components: GMS, MAE Consumer (optional), MCE Consumer (optional), and Frontend. The main components are powered by 4 external dependencies, and must be deployed before deploying Datahub:
 
 * Kafka
