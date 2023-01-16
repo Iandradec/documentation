@@ -57,32 +57,33 @@ The following command example creates a new file with datahub frontend credentia
 ```
 
 * Encrypt secrets.yaml file   
-The following command will encrypt the previous frontend-creds-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-``` 
+> The following command will encrypt the previous frontend-creds-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+> 
+```helm 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' frontend-creds-dec.yaml > frontend-creds.yaml 
 ```
 
 * Verify release upgrade
-``` 
+```helm 
 helm diff upgrade prerequisites datahub/datahub-prerequisites -f helm_values/values-prerequisites.yaml --no-hooks
 helm diff upgrade datahub datahub/ -f helm_values/values-hetzner.yaml --no-hooks
 ```
 
 * Upgrade release
-``` 
+```helm
 helm upgrade --install prerequisites datahub/datahub-prerequisites -f helm_values/values-prerequisites.yaml
 helm secrets upgrade --install datahub datahub/ -f helm_values/values-hetzner.yaml -f helm_secrets/frontend-creds.yaml --no-hooks
 ```
   
 * Install release 
-```
+```helm
 helm install prerequisites datahub/datahub-prerequisites -f helm_values/values-prerequisites.yaml
 helm secrets --install datahub datahub/ -f helm_values/values-hetzner.yaml -f helm_secrets/frontend-creds.yaml --no-hooks
 ```
 
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
-``` 
+```helm
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
