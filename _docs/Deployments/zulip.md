@@ -55,7 +55,7 @@ The following command example creates a new file with zulip and it's dependencie
 ```
 
 * Encrypt secrets.yaml file   
-  The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 
 ``` 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
@@ -65,7 +65,6 @@ sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.y
 ```
 helm secrets upgrade --install zulip . -f values-hetzner.yaml -f secrets-hetzner.yaml 
 ```
-
 > This will show a message on how to reach your Zulip installation and how to create your first realm, wait for all your pods to be ready before you continue.
 > Run the commands to create a Realm, and you can reach Zulip following the instructions as well.
 
