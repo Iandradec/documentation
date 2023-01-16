@@ -30,7 +30,7 @@ helm create timeflow
 ```
 * Create decrypted secrets.yaml file
 The following command example creates a file with secrets variables in plain text.
-  ```
+```
   cat <<EOF > secrets-dec.yaml
   db:
       extraEnvs:
@@ -45,7 +45,7 @@ The following command example creates a file with secrets variables in plain tex
               - name: SECRET_KEY
                 value: <backend_secret_key_example>
   EOF
-  ```
+```
 * Encrypt secrets.yaml file   
 The following commands will manage the encryption of previous secrets-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 ``` 
