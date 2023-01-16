@@ -10,11 +10,10 @@ This chart bootstraps <a href="https://github.com/acryldata/datahub-helm" target
 
 #### Components
 Datahub consists of 4 main components: GMS, MAE Consumer (optional), MCE Consumer (optional), and Frontend. The main components are powered by 4 external dependencies, and must be deployed before deploying Datahub:
-
-* Kafka
-* Local DB (MySQL, Postgres, MariaDB)
-* Search Index (Elasticsearch)
-* Graph Index (Supports either Neo4j or Elasticsearch)
+  * Kafka
+  * Local DB (MySQL, Postgres, MariaDB)
+  * Search Index (Elasticsearch)
+  * Graph Index (Supports either Neo4j or Elasticsearch)
  
 * Create and select namespace
 ```

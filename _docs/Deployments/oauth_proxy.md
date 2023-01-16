@@ -19,9 +19,9 @@ kubectl config set-context --current --namespace=proxy
 ``` helm repo add oauth2-proxy https://oauth2-proxy.github.io/manifests ```
 
 * Upgrade or install release
+Refer to values.yaml for the deployment values:
 ```yaml
 ---
-Refer to values.yaml for the deployment values:
 RELEASE_NAME: <your_release_name>
 CHART_NAME: <your_chart_name>
 ---
