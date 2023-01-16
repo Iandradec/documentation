@@ -71,7 +71,7 @@ helm secrets upgrade --install zulip . -f values-hetzner.yaml -f secrets-hetzner
 export POD_NAME=$(kubectl get pods --namespace chat-prod -l "app.kubernetes.io/name=zulip" -o jsonpath="{.items[0].metadata.name}")                         
 kubectl -n chat-prod exec -it "$POD_NAME" -c zulip -- sudo -u zulip /home/zulip/deployments/current/manage.py generate_realm_creation_link
 ```
-
+---
 #### Values
 
 | Key       | Type      | Default       | Description       |

@@ -34,7 +34,7 @@ MYSQL_ROOT_PASSWORD: <YOUR_MYSQL_PASSWORD>
 NEO4J_ROOT_PASSWORD: <YOUR_NEO4J_PASSWORD>
 ---
 ```
-``` 
+```bash
 kubectl create secret generic mysql-secrets --from-literal=mysql-root-password=$MYSQL_ROOT_PASSWORD
 kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J_ROOT_PASSWORD
 ```

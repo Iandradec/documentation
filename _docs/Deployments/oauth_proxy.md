@@ -36,7 +36,7 @@ helm install $RELEASE_NAME $CHART_NAME -f ./values-dev.yaml
 * Uninstallation
 For a complete uninstallation, make sure to delete pvc created.
 
-``` bash
+```bash
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```

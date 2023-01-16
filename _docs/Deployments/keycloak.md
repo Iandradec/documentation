@@ -16,7 +16,7 @@ kubectl config set-context --current --namespace=keycloak
 ```
 
 * Add Helm repo
-``` bash
+```bash
 helm repo add codecentric https://codecentric.github.io/helm-charts 
 ```
 
