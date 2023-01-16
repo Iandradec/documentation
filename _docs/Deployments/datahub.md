@@ -41,6 +41,7 @@ kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J
 
 * Create decrypted secrets.yaml file
 The following command example creates a new file with datahub frontend credentials in plain text.
+
 ```bash
   cat <<EOF > frontend-creds-dec.yaml
   datahub-frontend:
