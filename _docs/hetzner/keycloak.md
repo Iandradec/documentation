@@ -1,7 +1,7 @@
 ---
 title: Keycloak
 category: hetzner
-order: 2
+order: 4
 ---
 # How to create a Keycloak deployment
 
