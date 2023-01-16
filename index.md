@@ -38,18 +38,18 @@ kubectl config set-context --current --namespace=$NAMESPACE
 ### How to create a simple PostgresSQL deployment
 This chart bootstraps a PostgreSQL deployment using the Helm package manager.
 
-### Create and select namespace
+* Create and select namespace
 ``` 
 kubectl create ns postgres  
 kubectl config set-context --current --namespace=postgres
 ```
   
-### Create a new Helm chart
+* Create a new Helm chart
 ```
 helm create postgres-chart
 ```
 
-### Create decrypted secrets.yaml file
+* Create decrypted secrets.yaml file
 The following command example creates a file with credentials for postgresql in plain text.
 
   ```
@@ -89,16 +89,15 @@ kubectl delete pvc $RELEASE_NAME-pvc
 
 ## Deployments on Hetzner cloud
 This section shows more in detail on how to deploy each app on dyvenia infrastructure.
-
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/datahub" target="_blank"> Datahub deployment</a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/cert-manager" target="_blank"> Cert-manager deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/ingress" target="_blank"> Ingress Controller deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/postgresql" target="_blank"> PostgreSQL deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/privatebin" target="_blank"> PrivateBin deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/timeflow" target="_blank"> Timeflow deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/oauth2" target="_blank"> Proxy-oauth2 deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/keycloak" target="_blank"> Keycloak deployment </a>
-### <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/zulip" target="_blank"> Zulip deployment </a> 
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/datahub" target="_blank"> Datahub deployment</a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/cert-manager" target="_blank"> Cert-manager deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/ingress" target="_blank"> Ingress Controller deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/postgresql" target="_blank"> PostgreSQL deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/privatebin" target="_blank"> PrivateBin deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/timeflow" target="_blank"> Timeflow deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/oauth2" target="_blank"> Proxy-oauth2 deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/keycloak" target="_blank"> Keycloak deployment </a>
+* <a href="https://github.com/dyvenia/infrastructure/tree/main/deployments/zulip" target="_blank"> Zulip deployment </a> 
 <!-- 
 This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
 **Edition** is perfect for documenting your product, application or service.
