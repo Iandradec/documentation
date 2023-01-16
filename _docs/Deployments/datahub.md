@@ -4,10 +4,10 @@ category: Deployments
 order: 2
 ---
 
-## How to create a datahub deployment
+### How to create a datahub deployment
 This chart bootstraps <a href="https://github.com/acryldata/datahub-helm" target="_blank"> Datahub </a> and it's dependencies (Elasticsearch, optionally Neo4j, MySQL, and Kafka) on a Kubernetes cluster using the Helm package manager. 
 
-## Components
+### Components
 Datahub consists of 4 main components: GMS, MAE Consumer (optional), MCE Consumer (optional), and Frontend. The main components are powered by 4 external dependencies, and must be deployed before deploying Datahub:
 
 * Kafka
@@ -22,13 +22,18 @@ kubectl config set-context --current --namespace datahub
 ```
   
 * Add Helm repo
-``` helm repo add datahub https://helm.datahubproject.io/ ```
+``` 
+helm repo add datahub https://helm.datahubproject.io/ 
+```
 
 * Create prerequisites secrets
 The following command creates prerequisites credentials as secrets for a fresh deployment. 
-
->   * MYSQL_ROOT_PASSWORD: <YOUR_MYSQL_PASSWORD>
->   * NEO4J_ROOT_PASSWORD: <YOUR_NEO4J_PASSWORD>
+```yaml
+---
+MYSQL_ROOT_PASSWORD: <YOUR_MYSQL_PASSWORD>
+NEO4J_ROOT_PASSWORD: <YOUR_NEO4J_PASSWORD>
+---
+```
 
 ``` 
 kubectl create secret generic mysql-secrets --from-literal=mysql-root-password=$MYSQL_ROOT_PASSWORD
@@ -38,7 +43,7 @@ kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J
 * Create decrypted secrets.yaml file
 The following command example creates a new file with datahub frontend credentials in plain text.
 
- ```
+```
   cat <<EOF > frontend-creds-dec.yaml
   datahub-frontend:
     extraEnvs:
@@ -50,7 +55,7 @@ The following command example creates a new file with datahub frontend credentia
         clientId: < google_client_id >
         clientSecret: < google_client_secret >
   EOF
-  ```
+```
 
 * Encrypt secrets.yaml file   
 The following command will encrypt the previous frontend-creds-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
@@ -79,7 +84,6 @@ helm secrets --install datahub datahub/ -f helm_values/values-hetzner.yaml -f he
 
 * Uninstall release
 For a complete uninstall, make sure to delete pvc created.
-
 ``` 
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
