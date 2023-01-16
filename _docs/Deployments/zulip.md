@@ -26,9 +26,8 @@ helm dependency update                       # Get helm dependency charts
 
 * Create decrypted secrets.yaml file
 The following command example creates a new file with zulip and it's dependencies credentials in plain text.
-
 ```
-  cat <<EOF > secrets-hetzner-dec.yaml
+    cat <<EOF > secrets-hetzner-dec.yaml
     zulip:
         password: <your_zulip_secret_password>
         environment:
@@ -51,12 +50,11 @@ The following command example creates a new file with zulip and it's dependencie
         auth:
             postgresqlPassword: <your_admin_psql_password>
             password: <your_zulip_psql_password> 
-  EOF
+    EOF
 ```
 
 * Encrypt secrets.yaml file   
 The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
-
 ``` 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
 ```
@@ -75,7 +73,7 @@ kubectl -n chat-prod exec -it "$POD_NAME" -c zulip -- sudo -u zulip /home/zulip/
 
 #### Values
 
-| Key | Type | Default | Description |
+| Key       | Type      | Default       | Description        |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity for pod assignment. Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity |
 | fullnameOverride | string | `""` | Fully override common.names.fullname template. |
