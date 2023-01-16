@@ -28,7 +28,7 @@ helm repo add datahub https://helm.datahubproject.io/
 
 * Create prerequisites secrets
 The following command creates prerequisites credentials as secrets for a fresh deployment. 
-```yaml
+```bash
 ---
 MYSQL_ROOT_PASSWORD: <YOUR_MYSQL_PASSWORD>
 NEO4J_ROOT_PASSWORD: <YOUR_NEO4J_PASSWORD>
@@ -42,7 +42,7 @@ kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=$NEO4J
 * Create decrypted secrets.yaml file
 The following command example creates a new file with datahub frontend credentials in plain text.
 
-```
+```bash
   cat <<EOF > frontend-creds-dec.yaml
   datahub-frontend:
     extraEnvs:

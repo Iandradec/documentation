@@ -54,7 +54,7 @@ The following command example creates a new file with zulip and it's dependencie
 ```
 
 * Encrypt secrets.yaml file   
-The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
+> The following command will encrypt the previous secrets-hetzner-dec.yaml file using <a href="https://github.com/mozilla/sops" target="_blank"> SOPS: Secrets OperationS </a> and AWS Key Managament Service.
 ``` 
 sops -e  --kms '<YOUR_AWS_KMS_KEY>' secrets-hetzner-dec.yaml > secrets-hetzner.yaml 
 ```
