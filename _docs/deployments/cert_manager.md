@@ -1,5 +1,5 @@
 ---
 title: Cert Manager 
-category: infrastructure
+category: deployments
 order: 1
 ---

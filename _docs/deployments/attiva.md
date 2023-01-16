@@ -1,7 +1,7 @@
 ---
 title: Keycloak
-category: infrastructure
-order: 11
+category: deployments
+order: 10
 ---
 # How to create a Keycloak deployment
 

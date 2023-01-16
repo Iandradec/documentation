@@ -1,6 +1,6 @@
 ---
 title: Timeflow
-category: infrastructure
+category: deployments
 order: 7
 ---
 

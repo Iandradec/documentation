@@ -1,5 +1,5 @@
 ---
 title: Datahub
-category: infrastructure
+category: deployments
 order: 2
 ---

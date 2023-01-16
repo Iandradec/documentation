@@ -1,5 +1,5 @@
 ---
 title: Ingress
-category: infrastructure
+category: deployments
 order: 3
 ---
