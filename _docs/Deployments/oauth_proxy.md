@@ -29,8 +29,9 @@ CHART_NAME: <your_chart_name>
 ---
 ```
 
-
-```helm install $RELEASE_NAME $CHART_NAME -f ./values-dev.yaml ```
+```
+helm install $RELEASE_NAME $CHART_NAME -f ./values-dev.yaml
+ ```
 
 * Uninstallation
 For a complete uninstallation, make sure to delete pvc created.
@@ -39,7 +40,7 @@ For a complete uninstallation, make sure to delete pvc created.
 helm uninstall $RELEASE_NAME
 kubectl delete pvc $RELEASE_NAME-pvc
 ```
-
+---
 #### Values
 The following table lists the configurable parameters of the oauth2-proxy chart and their default values.
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
